@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Pitch.coffee</title>
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:700i|Special+Elite" rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jscolor.min.js"></script>
+        
+	</head>
+	<body>
+        
+        <div class= "pitch-logo-div">
+            
+            <img class="pitch-logo-image" src="js/pitch-coffee4.png">
+        
+        </div>
+        
+        <div class="external-container">
+        
+        <div class="container" id="tools-container">
+            <p>Select custom colour</p>
+            <input id="chosen-cup-colour" class="jscolor {width:243, height:150, position:'bottom center',
+    borderColor:'#FFF', insetColor:'#FFF', backgroundColor:'#666'}" onchange="updateCanvas(this.jscolor)">
+        
+            <p id="ellipsis">...</p>
+            
+            <p>Upload your company logo</p>
+            <label for="user_file" id="custom_user_file">
+                <input type="file" name="user_file" id="user_file">
+                Upload logo
+            </label>
+                
+            <p id="ellipsis">...</p>
+            
+            <p>Adjust, scale and rotate logo in our custom editor</p>
+            
+            <button id="preview-button">Preview</button>
+       
+        </div>
+        
+        <div class="container" id="design-container">
+                
+            <canvas id="c" width="1024" height="512"></canvas>
+                
+        </div>
+            
+            <div id="mobile-controls-container">
+            
+                <button id="rotate-button"></button>
+                
+                <button id="scale-up-button"></button>
+                
+                <button id="scale-down-button"></button>
+                
+            </div>
+            
+        </div>
+        
+        <script src="js/jquery-3.3.1.min.js"></script>
+        
+        <script src="js/fabric.min.js"></script>
+		<script src="js/three.js"></script>
+        <script src="js/OrbitControls.js"></script>
+        <script src="js/script-mobile.js"></script>
+        <script src="js/script-design.js"></script>
+		<script src="js/script-preview.js"></script>
+	
+    </body>
+</html>
