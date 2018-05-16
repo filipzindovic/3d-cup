@@ -1,5 +1,3 @@
-var previewClicked = false;
-
 var designCanvas = new fabric.Canvas("c", {backgroundColor: "#fff"});
 
 function updateCanvas(jscolor) {
@@ -15,11 +13,7 @@ document.getElementById('user_file').addEventListener("change", function (e) {
   reader.onload = function (f) {
     var data = f.target.result;                    
     fabric.Image.fromURL(data, function (img) {
-      if (mobileScale) {
-        var oImg = img.set().scale(0.1);  
-      } else {
-        var oImg = img.set().scale(0.4);  
-      }
+      var oImg = img.set().scale(0.4);  
       designCanvas.add(oImg).renderAll();
       var a = designCanvas.setActiveObject(oImg);
       var dataURL = designCanvas.toDataURL({format: 'png', quality: 1});
@@ -28,10 +22,23 @@ document.getElementById('user_file').addEventListener("change", function (e) {
   reader.readAsDataURL(file);
 });
 
-document.getElementById("preview-button").addEventListener("click", function() {
+function updateDesignCanvas() {
     var dataUrl = designCanvas.toDataURL();
-    var cupColour = Number(`0x${document.getElementById("chosen-cup-colour").value}`);
-    previewClicked = true;
-    initialise(dataUrl, cupColour);
+    return dataUrl;
+}
+
+document.getElementById("preview-button").addEventListener("click", function() {
+    
+    create3dScene(updateDesignCanvas());
+    
+    document.getElementById("preview-container").style.visibility = "visible";
+    
 });
+
+document.getElementById("close-button").addEventListener("click", function() {
+    
+    document.getElementById("preview-container").style.visibility = "hidden";
+
+});
+
     

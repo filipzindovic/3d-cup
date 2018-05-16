@@ -10,42 +10,32 @@ body {
     width: 360px;
 }
 
-.external-container {
-    text-align: center;
-}
-
 .container {
-/*    float: inherit;*/
-/*    padding: 40px;*/
     text-align: center;
 }
 
 #c {
     border: 2px solid black;
-    display: inline-block;
 }
 
 #design-container {
-    text-align: center;
-    padding: 20px 20px 0px 20px;
-    float: left;
+    padding: 40px 20px 0px 20px;
+    text-align: center !important;
+}
+
+.canvas-container {
+    margin: 0 auto;
 }
 
 #tools-container {
-    text-align: center;
     font-family: 'Special Elite', cursive;
     font-size: 20px;
     padding: 30px 20px 0px 20px;
-    float: left;
 }
 
 #ellipsis {
     font-size: 30px;
     margin: 40px;
-}
-
-#mobile-controls-container {
-    display: none;
 }
 
 #preview-button {
@@ -95,88 +85,18 @@ input[type="file"] {
     display: none;
 }
 
-
-
-@media screen and (max-width:980px) {
-    
-    #c {
-        display: block;
-        text-align: center;
-    }
-    
-    #design-container {
-        text-align: center;
-        display: block;
-    }
-
-    #tools-container {
-        text-align: center;
-        display: block;
-    }
-    
-    #mobile-controls-container {
-        text-align: center;
-        display: block;
-        margin-top: 10px;
-    }
-    
-    #rotate-button {
-        width: 50px;
-        height: 50px;
-        box-shadow: 2px 2px;
-        border-radius: 5px;
-        margin: 5px 5px 0px 5px;
-        padding: 5px;
-
-        background-image: url(../rotate.png);
-        background-size: cover;
-        background-color: darkgray;
-    }
-
-    #scale-up-button {
-        width: 50px;
-        height: 50px;
-        box-shadow: 2px 2px;
-        border-radius: 5px;
-        margin: 5px 5px 0px 5px;
-        padding: 5px;
-
-
-        background-image: url(../scale-up.png);
-        background-size: cover;
-        background-color: darkgray;
-    }
-
-    #scale-down-button {
-        width: 50px;
-        height: 50px;
-        box-shadow: 2px 2px;
-        border-radius: 5px;
-        margin: 5px 5px 0px 5px;
-        padding: 5px;
-
-        background-image: url(../scale-down.png);
-        background-size: cover;
-        background-color: darkgray;
-    }
-    
-    #3d-canvas {
-        width: 200vw;
-        top: none;
-        left: 20vw;
-        
-    }
-    
+.preview-container {
+    visibility: hidden;
 }
-/*
-#3d-canvas {
-    width: 900px;
+
+.close-button {
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    display: block;
     position: fixed;
-    top: 80px;
-    left: 70px;
-    border: 2px solid black;
-    box-shadow: 2px 2px;
+    top: 1%;
+    right: 3%;
+    background-color: red;
+    z-index: 15;
 }
-*/
-
-/*What you can do is encapsulate the canvas in a div with no borders and make a little "X" box in the top right hand corner that sets display to "none"*/

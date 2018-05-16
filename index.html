@@ -17,12 +17,10 @@
         
         </div>
         
-        <div class="external-container">
-        
         <div class="container" id="tools-container">
-            <p>Select custom colour</p>
+            <p>Select cup colour</p>
             <input id="chosen-cup-colour" class="jscolor {width:243, height:150, position:'bottom center',
-    borderColor:'#FFF', insetColor:'#FFF', backgroundColor:'#666'}" onchange="updateCanvas(this.jscolor)">
+            borderColor:'#FFF', insetColor:'#FFF', backgroundColor:'#666'}" onchange="updateCanvas(this.jscolor)">
         
             <p id="ellipsis">...</p>
             
@@ -40,32 +38,21 @@
        
         </div>
         
-        <div class="container" id="design-container">
-                
-            <canvas id="c" width="1024" height="512"></canvas>
-                
-        </div>
-            
-            <div id="mobile-controls-container">
-            
-                <button id="rotate-button"></button>
-                
-                <button id="scale-up-button"></button>
-                
-                <button id="scale-down-button"></button>
-                
-            </div>
-            
+        <div class="container canvas-container" id="design-container">   
+            <canvas id="c" width="1024" height="512"></canvas>   
         </div>
         
+        <div class="preview-container" id="preview-container">
+            <button class="close-button" id="close-button"><strong>X</strong></button>
+            <div class="preview-canvas" id="preview-canvas"></div>
+        </div>
+
         <script src="js/jquery-3.3.1.min.js"></script>
-        
         <script src="js/fabric.min.js"></script>
 		<script src="js/three.js"></script>
         <script src="js/OrbitControls.js"></script>
-        <script src="js/script-mobile.js"></script>
         <script src="js/script-design.js"></script>
 		<script src="js/script-preview.js"></script>
-	
+
     </body>
 </html>
